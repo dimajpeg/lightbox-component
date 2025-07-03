@@ -24,6 +24,7 @@ function makeEnlarge(img) {
     clone.style.position = 'absolute'
     clone.style.left = `${left}px`
     clone.style.top = `${top}px`
+    clone.style.margin = getComputedStyle(img).margin
     glass.hidden = false
     glass.append(clone)
     img.hidden = true
