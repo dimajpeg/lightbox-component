@@ -33,6 +33,7 @@ function makeRevert(img) {
   return function revert() {
     const { left, top } = img.getBoundingClientRect()
     glass.hidden = true
+    glass.style.pointerEvents = 'none'
     clone.style.left = `${left}px`
     clone.style.top = `${top}px`
     clone.style.width = null
@@ -40,6 +41,7 @@ function makeRevert(img) {
 
     clone.ontransitionend = () => {
       img.hidden = false
+      glass.style.pointerEvents = null
       clone.remove()
     }
   }
