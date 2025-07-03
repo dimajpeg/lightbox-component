@@ -11,14 +11,14 @@ function makeEnlarge(img) {
   return function enlarge() {
     const clone = img.cloneNode(true)
     const { left, top } = img.getBoundingClientRect()
-    clone.id = 'clone'
+    clone.className = 'clone'
     clone.style.position = 'absolute'
     clone.style.left = `${left}px`
     clone.style.top = `${top}px`
     glass.hidden = false
     glass.append(clone)
     img.hidden = true
-    glass.onclick = makeRevert(img)
+    glass.onclick = makeRevert(img, clone)
 
     setTimeout(() => {
       const { left, top, width } = placeholder.getBoundingClientRect()
@@ -29,7 +29,7 @@ function makeEnlarge(img) {
   }
 }
 
-function makeRevert(img) {
+function makeRevert(img, clone) {
   return function revert() {
     const { left, top } = img.getBoundingClientRect()
     glass.hidden = true

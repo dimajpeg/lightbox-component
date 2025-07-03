@@ -1,5 +1,5 @@
 .img,
-#clone {
+.clone {
   width: 320px;
   float: left;
   margin: 0 20px 20px 0;
@@ -10,7 +10,7 @@
   }
 }
 
-#clone {
+.clone {
   transition: 1s;
 }
 
