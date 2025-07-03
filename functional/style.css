@@ -1,37 +1,10 @@
-.img,
-.clone {
+img {
   width: 320px;
   float: left;
   margin: 0 20px 20px 0;
 
-  &[hidden] {
-    display: block;
-    visibility: hidden;
-  }
-}
-
-.clone {
-  transition: 1s;
-}
-
-#glass {
-  background: #4446;
-  position: fixed;
-  inset: 0;
-  transition: background 500ms;
-
-  &[hidden] {
-    display: block;
-    background: #4440;
-    pointer-events: none;
-  }
-
-  #placeholder {
-    width: 800px;
-    aspect-ratio: 1.25;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  &:last-of-type{
+    float: right;
+    margin: 0 0 20px 20px;
   }
 }
